@@ -1,4 +1,11 @@
 const { ApolloServer, gql } = require('apollo-server');
+const mongoose = require('mongoose');
+
+// db
+mongoose.connect('mongodb://db:27017',(err)=>{
+    if (err) throw err;
+    console.log("connected to mongo");
+})
 
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against

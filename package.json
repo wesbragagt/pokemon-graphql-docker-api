@@ -6,13 +6,15 @@
   "author": "Weslley Braga <wesbragagt@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "local": "docker-compose -f docker-compose.local.yml up"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
   },
   "dependencies": {
     "apollo-server": "^2.19.0",
-    "graphql": "^15.4.0"
+    "graphql": "^15.4.0",
+    "mongoose": "^5.10.13"
   }
 }

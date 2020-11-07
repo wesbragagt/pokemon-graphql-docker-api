@@ -9,3 +9,15 @@ services:
       - .:/app
     ports:
       - "4000:4000"
+    links:
+      - db
+    depends_on:
+      - db
+
+  db:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    #mount the host directory for persistent storage
+    volumes:
+      - ./data:/data/db
