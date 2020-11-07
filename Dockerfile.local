@@ -1,0 +1,17 @@
+## Starts a development environment for this app using docker
+FROM mhart/alpine-node:12
+
+ENV PORT=4000
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY yarn.lock ./
+
+RUN yarn install --frozen-lockfile --quiet
+
+COPY . ./
+
+EXPOSE 4000
+
+CMD [ "yarn", "dev" ]
