@@ -21,3 +21,10 @@ services:
     #mount the host directory for persistent storage
     volumes:
       - ./data:/data/db
+
+  mongo-seed:
+    build: 
+      context: .
+      dockerfile: Dockerfile.seed
+    links:
+      - db
